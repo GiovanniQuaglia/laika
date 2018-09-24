@@ -30,6 +30,10 @@ player.id = 'player';
 player.width = 54;
 player.height = 106;
 
+const actionNotification = document.createElement('div');
+document.body.appendChild(actionNotification);
+actionNotification.classList.add('actionNotification');
+
 const planetFront = document.createElement('canvas');
 document.body.appendChild(planetFront);
 planetFront.class = 'planet';
@@ -53,4 +57,5 @@ export {
   touchAreaLeft,
   touchAreaRight,
   backgroundBefore,
+  actionNotification,
 };

@@ -56,6 +56,24 @@ body {
 }
 
 
+.actionNotification {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  left: 50%;
+  top: 125px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+#talk {
+  background: url('./images/actionsInterface/talkBalloon.png');
+}
+
+#act {
+  background: url('./images/actionsInterface/actionBalloon.png');
+}
+
 #titleWrapper {
   position: absolute;
   margin: auto;

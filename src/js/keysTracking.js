@@ -1,6 +1,11 @@
 import { touchAreaLeft, touchAreaRight } from './display/elements';
 
-const down = Object.create(null);
+const down = {
+  ArrowLeft: false,
+  ArrowRight: false,
+  ArrowUp: false,
+  ArrowDown: false,
+};
 
 const touchTracking = () => {
   touchAreaLeft.addEventListener('touchstart', () => {
@@ -30,6 +35,6 @@ function trackKeys(keys) {
   return down;
 }
 
-const arrowKeys = trackKeys(['ArrowLeft', 'ArrowRight', 'ArrowUp']);
+const arrowKeys = trackKeys(['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown']);
 
 export default arrowKeys;

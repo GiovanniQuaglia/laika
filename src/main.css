@@ -74,6 +74,27 @@ body {
   background: url('./images/actionsInterface/actionBalloon.png');
 }
 
+#textBox {
+  height: 90px;
+  width: 500px;
+  position: fixed;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 100;
+  font-family: opensans;
+  font-weight: 100;
+  color: #fff;
+}
+
+#textSpan {
+  vertical-align: middle;
+  line-height: normal;
+}
+
 #titleWrapper {
   position: absolute;
   margin: auto;

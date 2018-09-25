@@ -34,6 +34,14 @@ const actionNotification = document.createElement('div');
 document.body.appendChild(actionNotification);
 actionNotification.classList.add('actionNotification');
 
+const textBox = document.createElement('div');
+document.body.appendChild(textBox);
+textBox.id = 'textBox';
+
+const textSpan = document.createElement('span');
+textBox.appendChild(textSpan);
+textSpan.id = 'textBox';
+
 const planetFront = document.createElement('canvas');
 document.body.appendChild(planetFront);
 planetFront.class = 'planet';
@@ -58,4 +66,5 @@ export {
   touchAreaRight,
   backgroundBefore,
   actionNotification,
+  textBox,
 };

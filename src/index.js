@@ -9,6 +9,3 @@ window.onload = () => {
   displayPlanet();
   runAnimation();
 };
-
-
-// document.onload =

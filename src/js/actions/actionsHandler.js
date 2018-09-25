@@ -2,23 +2,31 @@ import { angle } from '../movement/angleIncrement';
 import Actions from './actionsClass';
 import year from '../state/yearState';
 import displayActionsNotifications from './displayActionsNotifications';
+import { textBox } from '../display/elements';
+import arrowKeys from '../keysTracking';
 
 const actionsList1957 = () => {
-  const actionsObject = new Actions(angle);
+  const actionsObject = new Actions(angle, textBox, arrowKeys);
   if (angle >= 100 && angle <= 120) {
+    if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
+      displayActionsNotifications('');
+      actionsObject.talk();
+      return;
+    }
     displayActionsNotifications('talk');
-    actionsObject.talk();
     return;
   }
   if (angle >= 200 && angle <= 220) {
+    if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
+      displayActionsNotifications('');
+      actionsObject.swear();
+      return;
+    }
     displayActionsNotifications('act');
-    actionsObject.letSwear();
     return;
   }
   displayActionsNotifications('');
 };
-
-// const triggerAction = arrowKeys.ArrowUp;
 
 const actionsYearHandler = () => {
   if (year['1957']) {
@@ -29,6 +37,5 @@ const actionsYearHandler = () => {
     actionsList1957();
   }
 };
-
 
 export default actionsYearHandler;

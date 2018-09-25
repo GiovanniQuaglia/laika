@@ -2,12 +2,12 @@ import { angle } from '../movement/angleIncrement';
 import Actions from './actionsClass';
 import year from '../state/yearState';
 import displayActionsNotifications from './displayActionsNotifications';
-import { textBox } from '../display/elements';
+import { textSpan } from '../display/elements';
 import arrowKeys from '../keysTracking';
 
 const actionsList1957 = () => {
-  const actionsObject = new Actions(angle, textBox, arrowKeys);
   if (angle >= 100 && angle <= 120) {
+    const actionsObject = new Actions(angle, textSpan, arrowKeys);
     if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
       displayActionsNotifications('');
       actionsObject.talk();
@@ -17,6 +17,7 @@ const actionsList1957 = () => {
     return;
   }
   if (angle >= 200 && angle <= 220) {
+    const actionsObject = new Actions(angle, textSpan, arrowKeys);
     if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
       displayActionsNotifications('');
       actionsObject.swear();

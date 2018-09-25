@@ -32,9 +32,8 @@ function trackKeys(keys) {
   window.addEventListener('keydown', track);
   window.addEventListener('keyup', track);
   touchTracking();
-  return down;
 }
 
-const arrowKeys = trackKeys(['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown']);
+trackKeys(['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown']);
 
-export default arrowKeys;
+export default down;

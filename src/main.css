@@ -8,14 +8,18 @@ body {
   background-color: #293249;
   margin: 0;
   overflow: hidden;
-  background-image: url('./images/space.png')
 }
 
 #background {
-  width: 100%;
-  height: 100%;
   position: absolute;
   overflow: hidden;
+  background: url('./images/space.png');
+  width: 600%;
+  height: 600%;
+  left: -300%;
+  bottom: -300%;
+  z-index: -1;
+  transform-origin: calc(50% + 50vw) calc(50% - 300px);
 }
 
 #touchAreaLeft {
@@ -31,21 +35,27 @@ body {
 }
 
 #planetFront {
+  width: 600px;
+  height: 600px;
   transform-origin: center;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   top: 250px;
-  /* display: none; */
+  background: url('./images/asteroidFront_600_low.png') 0 0 no-repeat;
+  display: none;
 }
 
 #planetBack {
+  width: 600px;
+  height: 600px;
   transform-origin: center;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   top: 250px;
-  /* display: none; */
+  background: url('./images/asteroidBack_600.png') 0 0 no-repeat;
+  display: none;
 }
 
 #player {
@@ -54,7 +64,6 @@ body {
   top: 187px;
   transform: translateX(-50%);
 }
-
 
 .actionNotification {
   height: 50px;
@@ -91,7 +100,7 @@ body {
 }
 
 #textSpan {
-  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
   line-height: normal;
 }
 
@@ -124,7 +133,6 @@ body {
   text-align: center;
   margin-top: -12PX;
 }
-
 
 #startButton {
   font-size: 24px;

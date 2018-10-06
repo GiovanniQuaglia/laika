@@ -1,4 +1,4 @@
-import runAnimation from './runAnimation';
+import runGame from './runAnimation';
 import { planetFront, planetBack } from './display/elements';
 
 const titleWrapper = document.createElement('div');
@@ -35,8 +35,8 @@ function displayInstructions() {
     () => {
       instructions.remove();
       displayHiddenCanvas();
-      runAnimation();
-    }, 4500,
+      runGame();
+    }, 500,
   );
 }
 

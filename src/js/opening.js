@@ -1,5 +1,5 @@
 import runGame from './runAnimation';
-import { planetFront, planetBack } from './display/elements';
+import { planetFront, planetBack, player } from './display/elements';
 
 const titleWrapper = document.createElement('div');
 
@@ -23,6 +23,7 @@ function fadeout() {
 const displayHiddenCanvas = () => {
   planetFront.style.display = 'block';
   planetBack.style.display = 'block';
+  player.style.display = 'block';
 };
 
 function displayInstructions() {
@@ -36,7 +37,7 @@ function displayInstructions() {
       instructions.remove();
       displayHiddenCanvas();
       runGame();
-    }, 500,
+    }, 3500,
   );
 }
 

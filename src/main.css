@@ -63,6 +63,7 @@ body {
   left: 50%;
   top: 177px;
   transform: translateX(-50%);
+  display: none;
 }
 
 .actionNotification {

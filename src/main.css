@@ -10,6 +10,15 @@ body {
   overflow: hidden;
 }
 
+#sky-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 #background {
   position: absolute;
   overflow: hidden;
@@ -25,13 +34,18 @@ body {
 #touchAreaLeft {
   height: 100%;
   width: 50%;
+  background-color: transparent;
   display: inline-block;
+  position: fixed;
 }
 
 #touchAreaRight {
   height: 100%;
   width: 50%;
+  background-color: transparent;
   display: inline-block;
+  position: fixed;
+  right: 0;
 }
 
 #planetFront {
@@ -135,6 +149,17 @@ body {
   margin-top: -12PX;
 }
 
+@media (max-width:375px) {
+  #title {
+    font-size: 100px;
+  }
+
+  #undertitle {
+    font-size: 33px;
+    margin-top: -6PX;
+  }
+}
+
 #startButton {
   font-size: 24px;
   font-weight: 100;
@@ -153,8 +178,11 @@ body {
   font-family: helvetica;
   font-weight: 100;
   color: #fff;
+  position: absolute;
   text-align: center;
-  padding-top: 300px;
+  top: 300px;
+  left: 0;
+  right: 0;
   opacity: 1;
   transition: 0.8s opacity;
 }

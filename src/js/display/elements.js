@@ -1,5 +1,7 @@
+const skyContainer = document.getElementById('sky-container');
+
 const background = document.createElement('div');
-document.body.appendChild(background);
+skyContainer.appendChild(background);
 background.id = 'background';
 
 const planetBack = document.createElement('div');
@@ -31,11 +33,11 @@ planetFront.class = 'planet';
 planetFront.id = 'planetFront';
 
 const touchAreaLeft = document.createElement('div');
-background.appendChild(touchAreaLeft);
+document.body.appendChild(touchAreaLeft);
 touchAreaLeft.id = 'touchAreaLeft';
 
 const touchAreaRight = document.createElement('div');
-background.appendChild(touchAreaRight);
+document.body.appendChild(touchAreaRight);
 touchAreaRight.id = 'touchAreaRight';
 
 export {

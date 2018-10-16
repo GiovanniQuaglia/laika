@@ -14,7 +14,7 @@ let frameID = 0;
 
 function update() {
   rotateElements(arrowKeys, delta);
-  actionsYearHandler(arrowKeys);
+  actionsYearHandler();
 }
 
 function panic() {

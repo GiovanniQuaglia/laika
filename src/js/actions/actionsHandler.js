@@ -4,32 +4,27 @@ import year from '../state/yearState';
 import displayActionsNotifications from './displayActionsNotifications';
 import { textSpan } from '../display/elements';
 import arrowKeys from '../keysTracking';
+import laikaDialogues from '../scripts/dialogues';
+import { actionForbidden } from '../scripts/scriptedDialogues';
 
 const actionsList1957 = () => {
-  if (angle >= 100 && angle <= 120) {
-    const actionsObject = new Actions(angle, textSpan, arrowKeys);
-    if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
-      displayActionsNotifications('');
-      actionsObject.talk();
-      return;
-    }
-    displayActionsNotifications('talk');
-    return;
-  }
   if (angle >= 200 && angle <= 220) {
     const actionsObject = new Actions(angle, textSpan, arrowKeys);
     if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
       displayActionsNotifications('');
-      actionsObject.swear();
+      actionsObject.talk(laikaDialogues.one);
       return;
     }
-    displayActionsNotifications('act');
+    displayActionsNotifications('talk');
     return;
   }
   displayActionsNotifications('');
 };
 
 const actionsYearHandler = () => {
+  if (actionForbidden) {
+    return;
+  }
   if (year['1957']) {
     actionsList1957();
     return;

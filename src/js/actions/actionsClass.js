@@ -1,3 +1,5 @@
+import { scriptSelector } from '../scripts/scriptedDialogues';
+
 let isActionRunning;
 
 export default class Action {
@@ -9,14 +11,15 @@ export default class Action {
     this.isActionRunning = isActionRunning;
   }
 
-  talk() {
+  talk(text) {
     isActionRunning = true;
-    this.textSpan.innerHTML = 'Привет!';
+    this.textSpan.innerHTML = text;
     if (this.arrowKeys.ArrowDown === true
       || this.arrowKeys.ArrowLeft === true
       || this.arrowKeys.ArrowRight === true) {
       this.textSpan.innerHTML = '';
       isActionRunning = false;
+      scriptSelector(text);
     }
   }
 

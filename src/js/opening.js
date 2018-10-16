@@ -37,7 +37,7 @@ function displayInstructions() {
       instructions.remove();
       displayHiddenCanvas();
       runGame();
-    }, 3500,
+    }, 500,
   );
 }
 

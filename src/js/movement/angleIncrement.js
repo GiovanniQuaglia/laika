@@ -11,7 +11,7 @@ const angleLoop = () => {
 };
 
 const angleIncrement = (direction) => {
-  const rotationSpeed = 1;
+  const rotationSpeed = 1.5;
   angle = direction === 'left' ? angle += rotationSpeed : angle -= rotationSpeed;
   return angleLoop();
 };

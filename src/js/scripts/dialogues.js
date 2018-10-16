@@ -1,5 +1,5 @@
 const laikaDialogues = {
-  one: "Seems that ther's nothing here.",
+  one: "Seems that there's nothing here.",
   two: "So...",
   three: "basically I am screwed.",
   four: "What a great idea to send me here.",

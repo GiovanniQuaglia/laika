@@ -29,15 +29,15 @@ const displayHiddenCanvas = () => {
 function displayInstructions() {
   const instructions = document.createElement('div');
   instructions.id = 'instructions';
-  instructions.innerHTML = 'Move around with the arrow keys';
+  instructions.innerHTML = 'Move around with the arrow left / right keys<br/>and do things with the arrow up key';
   document.body.appendChild(instructions);
-  setTimeout(fadeout, 3000);
+  setTimeout(fadeout, 4000);
   setTimeout(
     () => {
       instructions.remove();
       displayHiddenCanvas();
       runGame();
-    }, 500,
+    }, 5000,
   );
 }
 

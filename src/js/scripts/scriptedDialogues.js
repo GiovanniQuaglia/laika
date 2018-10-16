@@ -1,86 +1,22 @@
 import laikaDialogues from './dialogues';
 import { textSpan } from '../display/elements';
 
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 let actionForbidden = false;
 
 const firstScript = () => {
-  setTimeout(
-    () => {
-      textSpan.innerHTML = laikaDialogues.two;
-
-    },
-    2000
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-      textSpan.innerHTML = laikaDialogues.two;
-    },
-    3000
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-      textSpan.innerHTML = laikaDialogues.three;
-    },
-    5000
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-    },
-    6900
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = laikaDialogues.four;
-    },
-    7500
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-    },
-    9900
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = laikaDialogues.five;
-    },
-    10500
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-      textSpan.innerHTML = laikaDialogues.six;
-    },
-    12300
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-    },
-    14000
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = laikaDialogues.seven;
-    },
-    15000
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = laikaDialogues.eight;
-    },
-    17000
-  );
-  setTimeout(
-    () => {
-      textSpan.innerHTML = '';
-      actionForbidden = false;
-    },
-    20000
-  );
+  wait(2000).then(() => { textSpan.innerHTML = laikaDialogues.two; });
+  wait(4000).then(() => { textSpan.innerHTML = laikaDialogues.three; });
+  wait(6000).then(() => { textSpan.innerHTML = ''; });
+  wait(7000).then(() => { textSpan.innerHTML = laikaDialogues.four; });
+  wait(9900).then(() => { textSpan.innerHTML = ''; });
+  wait(10500).then(() => { textSpan.innerHTML = laikaDialogues.five; });
+  wait(12300).then(() => { textSpan.innerHTML = laikaDialogues.six; });
+  wait(14000).then(() => { textSpan.innerHTML = ''; });
+  wait(15000).then(() => { textSpan.innerHTML = laikaDialogues.seven; });
+  wait(18000).then(() => { textSpan.innerHTML = laikaDialogues.eight; });
+  wait(22000).then(() => { textSpan.innerHTML = ''; actionForbidden = false; });
 };
 
 const scriptSelector = (previous) => {

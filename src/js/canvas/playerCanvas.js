@@ -43,7 +43,7 @@ const turnLaikaSide = (arrowKeys) => {
 };
 
 const displayPlayer = (arrowKeys) => {
-  const isRunning = Object.keys(arrowKeys).some(k => arrowKeys[k]);
+  const isRunning = arrowKeys.ArrowLeft || arrowKeys.ArrowRight;
   if (isRunning) {
     turnLaikaSide(arrowKeys);
     return;

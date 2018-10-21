@@ -37,7 +37,7 @@ const turnLaikaSide = (arrowKeys) => {
     return;
   }
   if (arrowKeys.ArrowRight === true) {
-    line = 107;
+    line = 108;
     displayRunningLaika();
   }
 };
@@ -50,7 +50,7 @@ const displayPlayer = (arrowKeys) => {
   }
   const laikaToDisplay = selectedFrame();
   const tileX = laikaToDisplay * 54;
-  if (line === 107) {
+  if (line === 108) {
     ctx.save();
     ctx.translate(54, 0);
     ctx.scale(-1, 1);

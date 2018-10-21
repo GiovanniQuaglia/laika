@@ -1,0 +1,21 @@
+import { yearSelector } from './elements';
+
+const hideInputDisplay = () => {
+  yearSelector.style.opacity = '0';
+  setTimeout(
+    () => {
+      yearSelector.style.visibility = 'hidden';
+    }, 300,
+  );
+};
+
+const showInputDisplay = () => {
+  yearSelector.style.opacity = '1';
+  setTimeout(
+    () => {
+      yearSelector.style.visibility = 'visible';
+    }, 300,
+  );
+};
+
+export { hideInputDisplay, showInputDisplay };

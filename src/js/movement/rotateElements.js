@@ -1,12 +1,12 @@
 import {
   planetFront, planetBack, background,
-} from '../display/elements';
+} from '../domElements/elements';
 import { angleIncrement } from './angleIncrement';
 
 const rotatePlanet = (rotationDegree) => {
   planetFront.style.transform = `translateX(-50%) rotate(${rotationDegree}deg)`;
   planetBack.style.transform = `translateX(-50%) rotate(${rotationDegree}deg)`;
-  background.style.transform = `rotate(${rotationDegree}deg)`;
+  // background.style.transform = `rotate(${rotationDegree}deg)`;
 };
 
 const rotateElements = (arrowKeys) => {

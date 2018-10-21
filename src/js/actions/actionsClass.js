@@ -1,4 +1,4 @@
-import { scriptSelector } from '../scripts/scriptedDialogues';
+import scriptSelector from '../scripts/scriptedDialogues';
 
 let isActionRunning;
 

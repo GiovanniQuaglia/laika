@@ -1,4 +1,4 @@
-import { touchAreaLeft, touchAreaRight } from './display/elements';
+import { touchAreaLeft, touchAreaRight } from './domElements/elements';
 
 const down = {
   ArrowLeft: false,

@@ -15,18 +15,6 @@ player.id = 'player';
 player.width = 54;
 player.height = 106;
 
-const actionNotification = document.createElement('div');
-document.body.appendChild(actionNotification);
-actionNotification.classList.add('actionNotification');
-
-const textBox = document.createElement('div');
-document.body.appendChild(textBox);
-textBox.id = 'textBox';
-
-const textSpan = document.createElement('span');
-textBox.appendChild(textSpan);
-textSpan.id = 'textSpan';
-
 const planetFront = document.createElement('div');
 document.body.appendChild(planetFront);
 planetFront.class = 'planet';
@@ -40,6 +28,30 @@ const touchAreaRight = document.createElement('div');
 document.body.appendChild(touchAreaRight);
 touchAreaRight.id = 'touchAreaRight';
 
+const actionsContainer = document.createElement('div');
+document.body.appendChild(actionsContainer);
+actionsContainer.id = 'actionsContainer';
+
+const yearSelector = document.createElement('input');
+actionsContainer.appendChild(yearSelector);
+yearSelector.id = 'yearSelector';
+
+const yearSelectorButton = document.createElement('div');
+actionsContainer.appendChild(yearSelectorButton);
+yearSelectorButton.id = 'yearSelectorButton';
+
+// const textBox = document.createElement('div');
+// yearSelector.appendChild(textBox);
+// textBox.id = 'textBox';
+
+const textSpan = document.createElement('span');
+actionsContainer.appendChild(textSpan);
+textSpan.id = 'textSpan';
+
+const actionNotification = document.createElement('div');
+document.body.appendChild(actionNotification);
+actionNotification.classList.add('actionNotification');
+
 export {
   planetBack,
   planetFront,
@@ -48,6 +60,6 @@ export {
   touchAreaLeft,
   touchAreaRight,
   actionNotification,
-  textBox,
+  yearSelector,
   textSpan,
 };

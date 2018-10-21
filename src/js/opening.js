@@ -1,5 +1,5 @@
 import runGame from './runAnimation';
-import { planetFront, planetBack, player } from './display/elements';
+import { planetFront, planetBack, player } from './domElements/elements';
 
 const titleWrapper = document.createElement('div');
 
@@ -31,13 +31,13 @@ function displayInstructions() {
   instructions.id = 'instructions';
   instructions.innerHTML = 'Move around with the left / right arrow keys<br/>and do things with the arrow up key';
   document.body.appendChild(instructions);
-  setTimeout(fadeout, 4000);
+  setTimeout(fadeout, 40);
   setTimeout(
     () => {
       instructions.remove();
       displayHiddenCanvas();
       runGame();
-    }, 5000,
+    }, 50,
   );
 }
 

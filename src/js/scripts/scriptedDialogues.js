@@ -1,9 +1,10 @@
 import laikaDialogues from './dialogues';
-import { textSpan } from '../display/elements';
+import { textSpan } from '../domElements/elements';
+import action from '../state/actionsState';
+import { yearSelector } from '../domElements/elements';
+import { hideInputDisplay, showInputDisplay } from '../domElements/handleInputDisplay';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-let actionForbidden = false;
 
 const firstScript = () => {
   wait(2000).then(() => { textSpan.innerHTML = laikaDialogues.two; });
@@ -16,14 +17,15 @@ const firstScript = () => {
   wait(14000).then(() => { textSpan.innerHTML = ''; });
   wait(15000).then(() => { textSpan.innerHTML = laikaDialogues.seven; });
   wait(18000).then(() => { textSpan.innerHTML = laikaDialogues.eight; });
-  wait(22000).then(() => { textSpan.innerHTML = ''; actionForbidden = false; });
+  wait(23000).then(() => { textSpan.innerHTML = ''; action.forbidden = false; showInputDisplay()});
 };
 
 const scriptSelector = (previous) => {
-  if (previous === laikaDialogues.one) {
-    actionForbidden = true;
+  if (previous === laikaDialogues.one && action.forbidden === false) {
+    action.forbidden = true;
+    hideInputDisplay();
     firstScript();
   }
 };
 
-export { scriptSelector, actionForbidden };
+export default scriptSelector;

@@ -42,10 +42,6 @@ const yearSelectorButton = document.createElement('div');
 actionsContainer.appendChild(yearSelectorButton);
 yearSelectorButton.id = 'yearSelectorButton';
 
-// const textBox = document.createElement('div');
-// yearSelector.appendChild(textBox);
-// textBox.id = 'textBox';
-
 const textSpan = document.createElement('span');
 actionsContainer.appendChild(textSpan);
 textSpan.id = 'textSpan';

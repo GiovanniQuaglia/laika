@@ -33,7 +33,7 @@ body {
 
 #actionsContainer {
   height: 90px;
-  width: 900px;
+  width: 90%;
   position: fixed;
   left: 50%;
   top: 0px;
@@ -69,21 +69,12 @@ body {
   background-color: transparent;
 }
 
-/* #yearSelectorButton {
-  display: inline-block;
-  height: 32px;
-  width: 32px;
-  background: url('./images/icons/schedule_white_36x36.png');
-  background-size: auto;
-  background-position: center;
-  bottom: 0;
-} */
-
 #textSpan {
   vertical-align: -webkit-baseline-middle;
   line-height: normal;
   display: inherit;
   margin-top: 32px;
+  width: 100%
 }
 
 #touchAreaLeft {

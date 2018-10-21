@@ -1,4 +1,4 @@
-const laikaDialogues = {
+const laikaDialogues1957 = {
   one: "Seems that there's nothing here.",
   two: "So...",
   three: "basically I am screwed.",
@@ -9,4 +9,8 @@ const laikaDialogues = {
   eight: "with this glass helmet I cannot even lick myself."
 };
 
-export default laikaDialogues;
+const laikaDialogues1968 = {
+  one: "I have the feeling that something cool happened this year.",
+};
+
+export { laikaDialogues1957, laikaDialogues1968 };

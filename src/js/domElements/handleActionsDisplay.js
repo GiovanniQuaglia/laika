@@ -1,4 +1,4 @@
-import { actionNotification } from '../domElements/elements';
+import { actionNotification } from './createDomElements';
 
 const displayActionsNotifications = (id) => {
   actionNotification.id = id;

@@ -1,11 +1,14 @@
-import { yearSelector, background, textSpan } from '../domElements/elements';
+import { yearSelector, background, textSpan } from '../domElements/createDomElements';
 import action from './actionsState';
+import dialogueDisplayer from '../scripts/dialoguesTextDisplay';
 
-let year = 1957;
+const yearState = {
+  year: 1957,
+};
 
-yearSelector.value = year;
+yearSelector.value = yearState.year;
 yearSelector.addEventListener('focusout', () => {
-  yearSelector.value = year;
+  yearSelector.value = yearState.year;
 });
 
 const yearValidation = (value) => {
@@ -20,9 +23,8 @@ const lengthValidation = (value) => {
     return;
   }
   background.style.visibility = 'hidden';
-  const alert = ms => new Promise(resolve => setTimeout(resolve, ms));
-  alert(800).then(() => { textSpan.innerHTML = "This doesn't look good. Better not to go too much into the future."; });
-  alert(5000).then(() => { textSpan.innerHTML = ''; });
+  dialogueDisplayer(800, "This doesn't look good. Better not to go too much into the future.");
+  dialogueDisplayer(5000, '');
 };
 
 yearSelector.addEventListener('keypress', (e) => {
@@ -31,9 +33,9 @@ yearSelector.addEventListener('keypress', (e) => {
   }
   const key = e.which || e.keyCode;
   if (key === 13 && yearValidation(yearSelector.value)) {
-    lengthValidation(yearSelector.value)
-    year = yearSelector.value;
+    lengthValidation(yearSelector.value);
+    yearState.year = yearSelector.value;
   }
 });
 
-export default year;
+export default yearState;

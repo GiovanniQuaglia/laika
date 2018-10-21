@@ -1,26 +1,30 @@
-import laikaDialogues from './dialogues';
-import { textSpan } from '../domElements/elements';
+import { laikaDialogues1957 } from './dialogues';
+import dialogueDisplayer from './dialoguesTextDisplay';
 import action from '../state/actionsState';
 import { hideInputDisplay, showInputDisplay } from '../domElements/handleInputDisplay';
 
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const firstScript = () => {
-  wait(2000).then(() => { textSpan.innerHTML = laikaDialogues.two; });
-  wait(4000).then(() => { textSpan.innerHTML = laikaDialogues.three; });
-  wait(6000).then(() => { textSpan.innerHTML = ''; });
-  wait(7000).then(() => { textSpan.innerHTML = laikaDialogues.four; });
-  wait(9900).then(() => { textSpan.innerHTML = ''; });
-  wait(10500).then(() => { textSpan.innerHTML = laikaDialogues.five; });
-  wait(12300).then(() => { textSpan.innerHTML = laikaDialogues.six; });
-  wait(14000).then(() => { textSpan.innerHTML = ''; });
-  wait(15000).then(() => { textSpan.innerHTML = laikaDialogues.seven; });
-  wait(18000).then(() => { textSpan.innerHTML = laikaDialogues.eight; });
-  wait(23000).then(() => { textSpan.innerHTML = ''; action.forbidden = false; showInputDisplay()});
+  dialogueDisplayer(2000, laikaDialogues1957.two);
+  dialogueDisplayer(4000, laikaDialogues1957.three);
+  dialogueDisplayer(6000, '');
+  dialogueDisplayer(7000, laikaDialogues1957.four);
+  dialogueDisplayer(9900, '');
+  dialogueDisplayer(10500, laikaDialogues1957.five);
+  dialogueDisplayer(12300, laikaDialogues1957.six);
+  dialogueDisplayer(14000, '');
+  dialogueDisplayer(15000, laikaDialogues1957.seven);
+  dialogueDisplayer(18000, laikaDialogues1957.eight);
+  dialogueDisplayer(23000, '');
+  setTimeout(() => {
+    action.forbidden = false;
+    showInputDisplay();
+  },
+  23000);
 };
 
 const scriptSelector = (previous) => {
-  if (previous === laikaDialogues.one && action.forbidden === false) {
+  if (previous === laikaDialogues1957.one && action.forbidden === false) {
     action.forbidden = true;
     hideInputDisplay();
     firstScript();

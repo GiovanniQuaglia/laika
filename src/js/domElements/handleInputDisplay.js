@@ -1,4 +1,4 @@
-import { yearSelector } from './elements';
+import { yearSelector } from './createDomElements';
 
 const hideInputDisplay = () => {
   yearSelector.style.opacity = '0';

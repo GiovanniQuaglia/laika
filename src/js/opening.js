@@ -1,5 +1,5 @@
 import runGame from './runAnimation';
-import { planetFront, planetBack, player } from './domElements/elements';
+import { planetFront, planetBack, player } from './domElements/createDomElements';
 
 const titleWrapper = document.createElement('div');
 

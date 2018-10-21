@@ -1,4 +1,4 @@
-import { touchAreaLeft, touchAreaRight } from './domElements/elements';
+import { touchAreaLeft, touchAreaRight, actionNotification } from './domElements/createDomElements';
 
 const down = {
   ArrowLeft: false,
@@ -18,6 +18,12 @@ const touchTracking = () => {
     down.ArrowLeft = false;
   });
   touchAreaRight.addEventListener('touchend', () => {
+    down.ArrowRight = false;
+  });
+  actionNotification.addEventListener('touchend', () => {
+    down.ArrowUp = true;
+  });
+  actionNotification.addEventListener('touchend', () => {
     down.ArrowRight = false;
   });
 };

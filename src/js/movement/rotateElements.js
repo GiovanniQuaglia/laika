@@ -1,6 +1,6 @@
 import {
   planetFront, planetBack, background,
-} from '../domElements/elements';
+} from '../domElements/createDomElements';
 import { angleIncrement } from './angleIncrement';
 
 const rotatePlanet = (rotationDegree) => {

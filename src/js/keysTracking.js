@@ -23,9 +23,6 @@ const touchTracking = () => {
   actionNotification.addEventListener('touchend', () => {
     down.ArrowUp = true;
   });
-  actionNotification.addEventListener('touchend', () => {
-    down.ArrowRight = false;
-  });
 };
 
 function trackKeys(keys) {

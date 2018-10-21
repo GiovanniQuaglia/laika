@@ -11,11 +11,7 @@ const hideInputDisplay = () => {
 
 const showInputDisplay = () => {
   yearSelector.style.opacity = '1';
-  setTimeout(
-    () => {
-      yearSelector.style.visibility = 'visible';
-    }, 300,
-  );
+  yearSelector.style.visibility = 'visible';
 };
 
 export { hideInputDisplay, showInputDisplay };

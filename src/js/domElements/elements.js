@@ -35,6 +35,8 @@ actionsContainer.id = 'actionsContainer';
 const yearSelector = document.createElement('input');
 actionsContainer.appendChild(yearSelector);
 yearSelector.id = 'yearSelector';
+yearSelector.type = 'text';
+yearSelector.maxlength = '6';
 
 const yearSelectorButton = document.createElement('div');
 actionsContainer.appendChild(yearSelectorButton);

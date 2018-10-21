@@ -1,7 +1,6 @@
 import laikaDialogues from './dialogues';
 import { textSpan } from '../domElements/elements';
 import action from '../state/actionsState';
-import { yearSelector } from '../domElements/elements';
 import { hideInputDisplay, showInputDisplay } from '../domElements/handleInputDisplay';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));

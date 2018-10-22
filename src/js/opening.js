@@ -1,5 +1,5 @@
 import runGame from './runAnimation';
-import { planetFront, planetBack, player } from './domElements/createDomElements';
+import { asteroidContainer, futureBackground } from './domElements/createDomElements';
 
 const titleWrapper = document.createElement('div');
 
@@ -21,9 +21,9 @@ function fadeout() {
 }
 
 const displayHiddenCanvas = () => {
-  planetFront.style.display = 'block';
-  planetBack.style.display = 'block';
-  player.style.display = 'block';
+  asteroidContainer.style.opacity = '1';
+  asteroidContainer.style.visibility = 'visible';
+  futureBackground.style.visibility = 'visible';
 };
 
 function displayInstructions() {

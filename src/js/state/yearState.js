@@ -1,6 +1,8 @@
 import { yearSelector, background, textSpan } from '../domElements/createDomElements';
 import action from './actionsState';
 import dialogueDisplayer from '../scripts/dialoguesTextDisplay';
+import yearTransitionDisplay from '../domElements/handleYearTransitionDisplay';
+import automaticNewYearDialogues from '../scripts/automaticNewYearDialogues';
 
 const yearState = {
   year: 1957,
@@ -19,22 +21,27 @@ const yearValidation = (value) => {
 
 const lengthValidation = (value) => {
   if (value < 9999) {
-    background.style.visibility = 'visible';
+    setTimeout(() => {
+      background.style.visibility = 'visible';
+    }, 400);
     return;
   }
-  background.style.visibility = 'hidden';
-  dialogueDisplayer(800, "This doesn't look good. Better not to go too much into the future.");
-  dialogueDisplayer(5000, '');
+  setTimeout(() => {
+    background.style.visibility = 'hidden';
+  }, 400);
 };
 
 yearSelector.addEventListener('keypress', (e) => {
   if (action.forbidden === true) {
     return;
   }
+  const { value } = yearSelector;
   const key = e.which || e.keyCode;
-  if (key === 13 && yearValidation(yearSelector.value)) {
-    lengthValidation(yearSelector.value);
-    yearState.year = yearSelector.value;
+  if (key === 13 && yearValidation(value)) {
+    yearTransitionDisplay();
+    lengthValidation(value);
+    automaticNewYearDialogues(value);
+    yearState.year = value;
   }
 });
 

@@ -1,24 +1,36 @@
 const skyContainer = document.getElementById('sky-container');
 
+const futureBackground = document.createElement('div');
+skyContainer.appendChild(futureBackground);
+futureBackground.id = 'futureBackground';
+
 const background = document.createElement('div');
 skyContainer.appendChild(background);
 background.id = 'background';
 
+const asteroidContainer = document.createElement('div');
+document.body.appendChild(asteroidContainer);
+asteroidContainer.id = 'asteroidContainer';
+
 const planetBack = document.createElement('div');
-document.body.appendChild(planetBack);
+asteroidContainer.appendChild(planetBack);
 planetBack.class = 'planet';
 planetBack.id = 'planetBack';
 
 const player = document.createElement('canvas');
-document.body.appendChild(player);
+asteroidContainer.appendChild(player);
 player.id = 'player';
 player.width = 54;
 player.height = 106;
 
 const planetFront = document.createElement('div');
-document.body.appendChild(planetFront);
+asteroidContainer.appendChild(planetFront);
 planetFront.class = 'planet';
 planetFront.id = 'planetFront';
+
+const yearChangeBlender = document.createElement('div');
+document.body.appendChild(yearChangeBlender);
+yearChangeBlender.id = 'yearChangeBlender';
 
 const touchAreaLeft = document.createElement('div');
 document.body.appendChild(touchAreaLeft);
@@ -35,8 +47,7 @@ actionsContainer.id = 'actionsContainer';
 const yearSelector = document.createElement('input');
 actionsContainer.appendChild(yearSelector);
 yearSelector.id = 'yearSelector';
-yearSelector.type = 'text';
-yearSelector.maxlength = '6';
+yearSelector.type = 'tel';
 
 const yearSelectorButton = document.createElement('div');
 actionsContainer.appendChild(yearSelectorButton);
@@ -51,6 +62,9 @@ document.body.appendChild(actionNotification);
 actionNotification.classList.add('actionNotification');
 
 export {
+  asteroidContainer,
+  yearChangeBlender,
+  futureBackground,
   planetBack,
   planetFront,
   player,

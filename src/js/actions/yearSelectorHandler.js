@@ -1,13 +1,7 @@
 import { yearSelector, background } from '../domElements/createDomElements';
 import yearTransitionDisplay from '../domElements/handleYearTransitionDisplay';
-import automaticNewYearDialogues from '../scripts/automaticNewYearDialogues';
+import defaultDialogues from '../scripts/defaultDialogues';
 import state from '../state/state';
-
-yearSelector.value = state.year;
-
-yearSelector.addEventListener('focusout', () => {
-  yearSelector.value = state.year;
-});
 
 const yearValidation = (value) => {
   const reg = new RegExp('^[0-9]+$');
@@ -27,7 +21,7 @@ const lengthValidation = (value) => {
   }, 400);
 };
 
-yearSelector.addEventListener('keypress', (e) => {
+function setYear(e) {
   if (state.actionForbidden === true) {
     return;
   }
@@ -36,7 +30,15 @@ yearSelector.addEventListener('keypress', (e) => {
   if (key === 13 && yearValidation(value)) {
     yearTransitionDisplay();
     lengthValidation(value);
-    automaticNewYearDialogues(value);
+    defaultDialogues(value);
     state.year = value;
   }
-});
+}
+
+(() => {
+  yearSelector.value = state.year;
+  yearSelector.addEventListener('focusout', () => {
+    yearSelector.value = state.year;
+  });
+  yearSelector.addEventListener('keypress', setYear);
+})();

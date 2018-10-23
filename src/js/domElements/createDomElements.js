@@ -17,6 +17,10 @@ asteroidContainer.appendChild(planetBack);
 planetBack.class = 'planet';
 planetBack.id = 'planetBack';
 
+const dynamicCanvas = document.createElement('canvas');
+planetBack.appendChild(dynamicCanvas);
+dynamicCanvas.id = 'dynamicCanvas';
+
 const player = document.createElement('canvas');
 asteroidContainer.appendChild(player);
 player.id = 'player';
@@ -87,6 +91,7 @@ titleWrapper.appendChild(startButton);
 
 export {
   asteroidContainer,
+  dynamicCanvas,
   yearChangeBlender,
   futureBackground,
   instructions,

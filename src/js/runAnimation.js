@@ -1,7 +1,9 @@
 import rotateElements from './movement/rotateElements';
 import actionsYearHandler from './actions/actionsHandler';
 import displayPlayer from './canvas/playerCanvas';
-import trackKeys from './keysTracking';
+import animateDisplayedElements from './canvas/animateDisplayedElements';
+import './keysTracking';
+import './actions/yearSelectorHandler';
 
 let lastFrameTimeMs = 0;
 const maxFPS = 60;
@@ -13,9 +15,10 @@ let lastFpsUpdate = 0;
 let frameID = 0;
 
 function update() {
-  // trackKeys();
-  rotateElements(delta);
+  rotateElements();
   actionsYearHandler();
+  displayPlayer();
+  animateDisplayedElements(framesThisSecond);
 }
 
 function panic() {
@@ -47,8 +50,6 @@ function mainLoop(timestamp) {
       break;
     }
   }
-
-  displayPlayer();
   frameID = requestAnimationFrame(mainLoop);
 }
 

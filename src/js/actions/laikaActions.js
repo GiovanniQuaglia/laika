@@ -11,6 +11,7 @@ function talk(text) {
     state.actionIsRunning = false;
     textSpan.innerHTML = '';
     scriptSelector(text);
+    return false;
   }
 }
 

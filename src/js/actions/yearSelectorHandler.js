@@ -2,6 +2,7 @@ import { yearSelector, background } from '../domElements/createDomElements';
 import yearTransitionDisplay from '../domElements/handleYearTransitionDisplay';
 import defaultDialogues from '../scripts/defaultDialogues';
 import state from '../state/state';
+import displayActionsNotifications from '../domElements/handleActionsDisplay';
 
 const yearValidation = (value) => {
   const reg = new RegExp('^[0-9]+$');
@@ -31,6 +32,7 @@ function setYear(e) {
     yearTransitionDisplay();
     lengthValidation(value);
     defaultDialogues(value);
+    displayActionsNotifications('');
     state.year = value;
   }
 }

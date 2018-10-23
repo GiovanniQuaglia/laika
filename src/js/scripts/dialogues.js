@@ -16,7 +16,7 @@ const laikaDialogues1957 = {
   tredici: `"use it to travel in time and build the machine itself,"`,
   quattordici:  `"so that I can send it back to you."`,
   quindici: 'This makes no sense',
-  sedici: `but let's give it ia try`,
+  sedici: `but let's give it a try young Sasha.`,
 };
 
 const laikaDialogues1968 = {

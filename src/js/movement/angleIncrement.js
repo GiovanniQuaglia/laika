@@ -1,19 +1,19 @@
-let angle = 0;
+import state from '../state/state';
 
 const angleLoop = () => {
-  if (angle > 360) {
-    angle %= 360;
+  if (state.angle > 360) {
+    state.angle %= 360;
   }
-  if (angle < 0) {
-    angle = 360 - angle;
+  if (state.angle < 0) {
+    state.angle = 360 - state.angle;
   }
-  return angle;
+  return state.angle;
 };
 
 const angleIncrement = (direction) => {
   const rotationSpeed = 1.5;
-  angle = direction === 'left' ? angle += rotationSpeed : angle -= rotationSpeed;
+  state.angle = direction === 'left' ? state.angle += rotationSpeed : state.angle -= rotationSpeed;
   return angleLoop();
 };
 
-export { angleIncrement, angle };
+export default angleIncrement;

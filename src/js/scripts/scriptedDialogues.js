@@ -1,6 +1,6 @@
 import { laikaDialogues1957 } from './dialogues';
 import dialogueDisplayer from './dialoguesTextDisplay';
-import action from '../state/actionsState';
+import state from '../state/state';
 import { hideInputDisplay, showInputDisplay } from '../domElements/handleInputDisplay';
 
 
@@ -17,15 +17,15 @@ const firstScript = () => {
   dialogueDisplayer(18000, laikaDialogues1957.eight);
   dialogueDisplayer(23000, '');
   setTimeout(() => {
-    action.forbidden = false;
+    state.actionForbidden = false;
     showInputDisplay();
   },
   23000);
 };
 
 const scriptSelector = (previous) => {
-  if (previous === laikaDialogues1957.one && action.forbidden === false) {
-    action.forbidden = true;
+  if (previous === laikaDialogues1957.one && state.actionForbidden === false) {
+    state.actionForbidden = true;
     hideInputDisplay();
     firstScript();
   }

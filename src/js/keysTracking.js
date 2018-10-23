@@ -1,42 +1,29 @@
 import { touchAreaLeft, touchAreaRight, actionNotification } from './domElements/createDomElements';
+import state from './state/state';
 
-const down = {
-  ArrowLeft: false,
-  ArrowRight: false,
-  ArrowUp: false,
-  ArrowDown: false,
-};
+const keys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
 
-const touchTracking = () => {
-  touchAreaLeft.addEventListener('touchstart', () => {
-    down.ArrowLeft = true;
-  });
-  touchAreaRight.addEventListener('touchstart', () => {
-    down.ArrowRight = true;
-  });
-  touchAreaLeft.addEventListener('touchend', () => {
-    down.ArrowLeft = false;
-  });
-  touchAreaRight.addEventListener('touchend', () => {
-    down.ArrowRight = false;
-  });
-  actionNotification.addEventListener('touchend', () => {
-    down.ArrowUp = true;
-  });
-};
+window.addEventListener('keydown', trackKeys);
+window.addEventListener('keyup', trackKeys);
+touchAreaLeft.addEventListener('touchstart', () => {
+  state.arrowKeys.ArrowLeft = true;
+});
+touchAreaRight.addEventListener('touchstart', () => {
+  state.arrowKeys.ArrowRight = true;
+});
+touchAreaLeft.addEventListener('touchend', () => {
+  state.arrowKeys.ArrowLeft = false;
+});
+touchAreaRight.addEventListener('touchend', () => {
+  state.arrowKeys.ArrowRight = false;
+});
+actionNotification.addEventListener('touchend', () => {
+  state.arrowKeys.ArrowUp = true;
+});
 
-function trackKeys(keys) {
-  function track(event) {
-    if (keys.includes(event.key)) {
-      down[event.key] = event.type === 'keydown';
-      event.preventDefault();
-    }
+function trackKeys(event) {
+  if (keys.includes(event.key)) {
+    state.arrowKeys[event.key] = event.type === 'keydown';
+    event.preventDefault();
   }
-  window.addEventListener('keydown', track);
-  window.addEventListener('keyup', track);
-  touchTracking();
 }
-
-trackKeys(['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown']);
-
-export default down;

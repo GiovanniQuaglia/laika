@@ -1,5 +1,6 @@
 import laikaRunningSprite from '../../images/laika/Laika_run.png';
 import laikaStaticSprite from '../../images/laika/Laika_static.png';
+import state from '../state/state';
 
 const laikaStatic = new Image();
 laikaStatic.src = laikaStaticSprite;
@@ -30,22 +31,22 @@ const displayRunningLaika = () => {
   ctx.drawImage(laikaRunning, tileX, line, 54, 106, 0, 0, 54, 106);
 };
 
-const turnLaikaSide = (arrowKeys) => {
-  if (arrowKeys.ArrowLeft === true) {
+const turnLaikaSide = () => {
+  if (state.arrowKeys.ArrowLeft === true) {
     line = 0;
     displayRunningLaika();
     return;
   }
-  if (arrowKeys.ArrowRight === true) {
+  if (state.arrowKeys.ArrowRight === true) {
     line = 108;
     displayRunningLaika();
   }
 };
 
-const displayPlayer = (arrowKeys) => {
-  const isRunning = arrowKeys.ArrowLeft || arrowKeys.ArrowRight;
+const displayPlayer = () => {
+  const isRunning = state.arrowKeys.ArrowLeft || state.arrowKeys.ArrowRight;
   if (isRunning) {
-    turnLaikaSide(arrowKeys);
+    turnLaikaSide();
     return;
   }
   const laikaToDisplay = selectedFrame();

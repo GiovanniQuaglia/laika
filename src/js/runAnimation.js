@@ -1,7 +1,7 @@
-import arrowKeys from './keysTracking';
 import rotateElements from './movement/rotateElements';
 import actionsYearHandler from './actions/actionsHandler';
 import displayPlayer from './canvas/playerCanvas';
+import trackKeys from './keysTracking';
 
 let lastFrameTimeMs = 0;
 const maxFPS = 60;
@@ -13,7 +13,8 @@ let lastFpsUpdate = 0;
 let frameID = 0;
 
 function update() {
-  rotateElements(arrowKeys, delta);
+  // trackKeys();
+  rotateElements(delta);
   actionsYearHandler();
 }
 
@@ -47,13 +48,13 @@ function mainLoop(timestamp) {
     }
   }
 
-  displayPlayer(arrowKeys);
+  displayPlayer();
   frameID = requestAnimationFrame(mainLoop);
 }
 
 function runGame() {
   frameID = requestAnimationFrame((timestamp) => {
-    displayPlayer(arrowKeys);
+    displayPlayer();
     lastFrameTimeMs = timestamp;
     lastFpsUpdate = timestamp;
     framesThisSecond = 0;

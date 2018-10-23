@@ -1,6 +1,6 @@
 import dialogueDisplayer from './dialoguesTextDisplay';
 
-function automaticNewYearDialogues(value) {
+function defaultDialogues(value) {
   const year = `${value}`;
   if (year.length > 4) {
     dialogueDisplayer(1200, "This doesn't look good. Better not to go too much into the future.");
@@ -13,4 +13,4 @@ function automaticNewYearDialogues(value) {
   }
 }
 
-export default automaticNewYearDialogues;
+export default defaultDialogues;

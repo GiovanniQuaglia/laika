@@ -3,16 +3,31 @@ import displayActionsNotifications from '../domElements/handleActionsDisplay';
 import { laikaDialogues1957, laikaDialogues1968 } from '../scripts/dialogues';
 import state from '../state/state';
 import { textSpan } from '../domElements/createDomElements';
+import chapters from '../scripts/chapters';
 
 const actionsList1957 = () => {
   if (state.angle >= 200 && state.angle <= 220) {
     if (state.arrowKeys.ArrowUp || state.actionIsRunning) {
       displayActionsNotifications('');
-      talk(laikaDialogues1957.one);
+      chapters.C01.firstDialogue = talk(laikaDialogues1957.one);
       return;
     }
-    displayActionsNotifications('talk');
-    return;
+    if (chapters.C01.firstDialogue) {
+      displayActionsNotifications('talk');
+      return;
+    }
+  }
+  if (state.angle >= 140 && state.angle <= 155) {
+    if (state.arrowKeys.ArrowUp || state.actionIsRunning) {
+      displayActionsNotifications('');
+      talk(laikaDialogues1957.ten);
+      chapters.C01.displayTimeMachine = false;
+      return;
+    }
+    if (chapters.C01.displayTimeMachine) {
+      displayActionsNotifications('talk');
+      return;
+    }
   }
   displayActionsNotifications('');
 };

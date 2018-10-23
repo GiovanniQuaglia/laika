@@ -1,16 +1,12 @@
-import { yearSelector, background, textSpan } from '../domElements/createDomElements';
-import action from './actionsState';
-import dialogueDisplayer from '../scripts/dialoguesTextDisplay';
+import { yearSelector, background } from '../domElements/createDomElements';
 import yearTransitionDisplay from '../domElements/handleYearTransitionDisplay';
 import automaticNewYearDialogues from '../scripts/automaticNewYearDialogues';
+import state from '../state/state';
 
-const yearState = {
-  year: 1957,
-};
+yearSelector.value = state.year;
 
-yearSelector.value = yearState.year;
 yearSelector.addEventListener('focusout', () => {
-  yearSelector.value = yearState.year;
+  yearSelector.value = state.year;
 });
 
 const yearValidation = (value) => {
@@ -32,7 +28,7 @@ const lengthValidation = (value) => {
 };
 
 yearSelector.addEventListener('keypress', (e) => {
-  if (action.forbidden === true) {
+  if (state.actionForbidden === true) {
     return;
   }
   const { value } = yearSelector;
@@ -41,8 +37,6 @@ yearSelector.addEventListener('keypress', (e) => {
     yearTransitionDisplay();
     lengthValidation(value);
     automaticNewYearDialogues(value);
-    yearState.year = value;
+    state.year = value;
   }
 });
-
-export default yearState;

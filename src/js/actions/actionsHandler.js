@@ -1,18 +1,14 @@
-import { angle } from '../movement/angleIncrement';
-import Actions from './actionsClass';
-import yearState from '../state/yearState';
+import talk from './laikaActions';
 import displayActionsNotifications from '../domElements/handleActionsDisplay';
-import { textSpan } from '../domElements/createDomElements';
-import arrowKeys from '../keysTracking';
 import { laikaDialogues1957, laikaDialogues1968 } from '../scripts/dialogues';
-import action from '../state/actionsState';
+import state from '../state/state';
+import { textSpan } from '../domElements/createDomElements';
 
 const actionsList1957 = () => {
-  if (angle >= 200 && angle <= 220) {
-    const actionsObject = new Actions(angle, textSpan, arrowKeys);
-    if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
+  if (state.angle >= 200 && state.angle <= 220) {
+    if (state.arrowKeys.ArrowUp || state.actionIsRunning) {
       displayActionsNotifications('');
-      actionsObject.talk(laikaDialogues1957.one);
+      talk(laikaDialogues1957.one);
       return;
     }
     displayActionsNotifications('talk');
@@ -22,13 +18,13 @@ const actionsList1957 = () => {
 };
 
 const actionsList1968 = () => {
-  if (angle >= 10 && angle <= 60) {
-    const actionsObject = new Actions(angle, textSpan, arrowKeys);
-    if (arrowKeys.ArrowUp || actionsObject.isActionRunning) {
+  if (state.angle >= 10 && state.angle <= 60) {
+    if (state.arrowKeys.ArrowUp || state.actionIsRunning) {
       displayActionsNotifications('');
-      actionsObject.talk(laikaDialogues1968.one);
+      talk(laikaDialogues1968.one);
       return;
     }
+    textSpan.innerHTML = '';
     displayActionsNotifications('talk');
     return;
   }
@@ -36,7 +32,7 @@ const actionsList1968 = () => {
 };
 
 function checkYear() {
-  const yearString = `${yearState.year}`;
+  const yearString = `${state.year}`;
   switch (yearString) {
     case '1957':
       actionsList1957();
@@ -49,7 +45,7 @@ function checkYear() {
 }
 
 const actionsYearHandler = () => {
-  if (action.forbidden) {
+  if (state.actionForbidden) {
     return;
   }
   checkYear();

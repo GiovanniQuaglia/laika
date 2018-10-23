@@ -61,10 +61,37 @@ const actionNotification = document.createElement('div');
 document.body.appendChild(actionNotification);
 actionNotification.classList.add('actionNotification');
 
+const titleWrapper = document.createElement('div');
+titleWrapper.id = 'titleWrapper';
+document.body.appendChild(titleWrapper);
+
+const title = document.createElement('div');
+titleWrapper.appendChild(title);
+title.id = 'title';
+title.innerHTML = 'ЛАЙКА';
+
+const undertitle = document.createElement('div');
+titleWrapper.appendChild(undertitle);
+undertitle.id = 'undertitle';
+undertitle.innerHTML = 'A DOG LOST IN SPACE';
+
+const instructions = document.createElement('div');
+document.body.appendChild(instructions);
+instructions.id = 'instructions';
+instructions.innerHTML = 'Move around with the left / right arrow keys<br/>and do things with the arrow up key';
+
+const startButton = document.createElement('div');
+startButton.id = 'startButton';
+startButton.innerHTML = 'START';
+titleWrapper.appendChild(startButton);
+
 export {
   asteroidContainer,
   yearChangeBlender,
   futureBackground,
+  instructions,
+  startButton,
+  titleWrapper,
   planetBack,
   planetFront,
   player,

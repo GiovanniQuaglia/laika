@@ -5,20 +5,25 @@ const keys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
 
 window.addEventListener('keydown', trackKeys);
 window.addEventListener('keyup', trackKeys);
-touchAreaLeft.addEventListener('touchstart', () => {
+touchAreaLeft.addEventListener('touchstart', (event) => {
   state.arrowKeys.ArrowLeft = true;
+  event.stopPropagation();
 });
-touchAreaRight.addEventListener('touchstart', () => {
+touchAreaRight.addEventListener('touchstart', (event) => {
   state.arrowKeys.ArrowRight = true;
+  event.stopPropagation();
 });
-touchAreaLeft.addEventListener('touchend', () => {
+touchAreaLeft.addEventListener('touchend', (event) => {
   state.arrowKeys.ArrowLeft = false;
+  event.stopPropagation();
 });
-touchAreaRight.addEventListener('touchend', () => {
+touchAreaRight.addEventListener('touchend', (event) => {
   state.arrowKeys.ArrowRight = false;
+  event.stopPropagation();
 });
-actionNotification.addEventListener('touchend', () => {
+actionNotification.addEventListener('touchend', (event) => {
   state.arrowKeys.ArrowUp = true;
+  event.stopPropagation();
 });
 
 function trackKeys(event) {

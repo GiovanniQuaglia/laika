@@ -2,7 +2,7 @@ import scriptSelector from '../scripts/scriptedDialogues';
 import state from '../state/state';
 import { textSpan } from '../domElements/createDomElements';
 
-function talk(text) {
+function talk(text, scriptStep) {
   state.actionIsRunning = true;
   textSpan.innerHTML = text;
   if (state.arrowKeys.ArrowDown === true
@@ -13,6 +13,7 @@ function talk(text) {
     scriptSelector(text);
     return false;
   }
+  return scriptStep;
 }
 
 export default talk;

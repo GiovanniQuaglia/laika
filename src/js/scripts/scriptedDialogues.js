@@ -4,6 +4,7 @@ import state from '../state/state';
 import { hideInputDisplay, showInputDisplay } from '../domElements/handleInputDisplay';
 import chapters from './chapters';
 import { stylingInteractiveObject } from '../canvas/interactiveObject';
+// import handleEndScreen from '../domElements/hadleEndScreenDisplay';
 
 const firstScript = () => {
   dialogueDisplayer(2000, laikaDialogues1957.two);
@@ -24,6 +25,7 @@ const firstScript = () => {
   dialogueDisplayer(26000, laikaDialogues1957.nine);
   dialogueDisplayer(29000, '');
   setTimeout(() => {
+    chapters.C01.secondDialogue = 'secondDialogue';
     state.actionForbidden = false;
   },
   29000);
@@ -42,9 +44,26 @@ const secondScript = () => {
   dialogueDisplayer(23000, '');
   setTimeout(() => {
     state.actionForbidden = false;
+    chapters.C01.thirdDialogue = 'thirdDialogue';
     showInputDisplay();
   }, 24000);
 };
+
+const thirdScript = () => {
+  dialogueDisplayer(1000, laikaDialogues1957.diciotto);
+  dialogueDisplayer(4000, laikaDialogues1957.diciannove);
+  dialogueDisplayer(8000, laikaDialogues1957.venti);
+  dialogueDisplayer(11000, '');
+  dialogueDisplayer(14000, laikaDialogues1957.ventuno);
+  dialogueDisplayer(17000, laikaDialogues1957.ventidue);
+  dialogueDisplayer(20000, '');
+  setTimeout(() => {
+    state.actionForbidden = false;
+    // handleEndScreen();
+    showInputDisplay();
+  }, 21000);
+};
+
 
 const scriptSelector = (previous) => {
   if (previous === laikaDialogues1957.one && state.actionForbidden === false) {
@@ -57,6 +76,11 @@ const scriptSelector = (previous) => {
     state.actionForbidden = true;
     hideInputDisplay();
     secondScript();
+  }
+  if (previous === laikaDialogues1957.diciassette && state.actionForbidden === false) {
+    state.actionForbidden = true;
+    hideInputDisplay();
+    thirdScript();
   }
 };
 

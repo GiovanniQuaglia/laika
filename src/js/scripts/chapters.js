@@ -1,6 +1,8 @@
 const chapters = {
   C01: {
-    firstDialogue: true,
+    firstDialogue: 'firstDialogue',
+    secondDialogue: false,
+    thirdDialogue: false,
     timeMachineDiscovery: false,
     displayTimeMachine: false,
   },

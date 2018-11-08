@@ -34,6 +34,7 @@ function setYear(e) {
     defaultDialogues(value);
     displayActionsNotifications('');
     state.year = value;
+    state.hasTravelledInTime = true;
   }
 }
 

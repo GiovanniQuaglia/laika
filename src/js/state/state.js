@@ -10,6 +10,8 @@ const state = {
   actionIsRunning: false,
   year: 1957,
   chapter: 1,
+  hasTimeMachine: false,
+  hasTravelledInTime: false,
 };
 
 export default state;

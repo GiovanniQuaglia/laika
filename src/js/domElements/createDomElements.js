@@ -6,7 +6,7 @@ futureBackground.id = 'futureBackground';
 
 const background = document.createElement('div');
 skyContainer.appendChild(background);
-background.id = 'background';
+background.className = 'background';
 
 const asteroidContainer = document.createElement('div');
 document.body.appendChild(asteroidContainer);
@@ -89,8 +89,18 @@ startButton.id = 'startButton';
 startButton.innerHTML = 'START';
 titleWrapper.appendChild(startButton);
 
+const endText = document.createElement('div');
+skyContainer.appendChild(endText);
+endText.id = 'endText';
+
+const credits = document.createElement('div');
+skyContainer.appendChild(credits);
+credits.id = 'credits';
+
 export {
   asteroidContainer,
+  endText,
+  credits,
   dynamicCanvas,
   yearChangeBlender,
   futureBackground,
@@ -106,4 +116,5 @@ export {
   actionNotification,
   yearSelector,
   textSpan,
+  skyContainer,
 };

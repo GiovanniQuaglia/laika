@@ -17,9 +17,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  text-align: center;
 }
 
-#background {
+.background {
   position: absolute;
   overflow: hidden;
   background: url('./images/space.png');
@@ -27,7 +28,6 @@ body {
   height: 600%;
   left: -300%;
   bottom: -300%;
-  z-index: -1;
   transform-origin: calc(50% + 50vw) calc(50% - 300px);
 }
 
@@ -260,4 +260,26 @@ body {
   right: 0;
   opacity: 1;
   transition: 0.8s opacity;
+}
+
+#endText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 42%;
+  font-size: 60px;
+  font-family: impact;
+  font-weight: 900;
+  color: #fff;
+}
+
+#credits {
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: 100;
+  color: #fff;
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
 }

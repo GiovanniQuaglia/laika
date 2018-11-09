@@ -4,7 +4,7 @@ import state from '../state/state';
 import { hideInputDisplay, showInputDisplay } from '../domElements/handleInputDisplay';
 import chapters from './chapters';
 import { stylingInteractiveObject } from '../canvas/interactiveObject';
-// import handleEndScreen from '../domElements/hadleEndScreenDisplay';
+import handleEndScreen from '../domElements/hadleEndScreenDisplay';
 
 const firstScript = () => {
   dialogueDisplayer(2000, laikaDialogues1957.two);
@@ -55,12 +55,10 @@ const thirdScript = () => {
   dialogueDisplayer(8000, laikaDialogues1957.venti);
   dialogueDisplayer(11000, '');
   dialogueDisplayer(14000, laikaDialogues1957.ventuno);
-  dialogueDisplayer(17000, laikaDialogues1957.ventidue);
-  dialogueDisplayer(20000, '');
+  dialogueDisplayer(16000, laikaDialogues1957.ventidue);
+  dialogueDisplayer(17500, '');
   setTimeout(() => {
-    state.actionForbidden = false;
-    // handleEndScreen();
-    showInputDisplay();
+    handleEndScreen();
   }, 21000);
 };
 

@@ -14,7 +14,7 @@ const laikaDialogues1957 = {
   tredici: `"use it to travel in time and build the machine itself,"`,
   quattordici:  `"so that I can send it back to you."`,
   quindici: 'This makes no sense',
-  sedici: 'but who am I to argue with myself.',
+  sedici: 'but who am I to argue with myself?',
   diciassette: 'That is right!',
   diciotto: 'I just have to place the time machine before my arrival,',
   diciannove: 'so that my past me can use it.',
@@ -24,7 +24,7 @@ const laikaDialogues1957 = {
 };
 
 const laikaDialogues2018 = {
-  one: 'Hi, I know you are there now. <br/> You are not gonna finish this game. It is incomplete.',
+  one: 'Hi, I know you are there now.',
 };
 
 export { laikaDialogues1957, laikaDialogues2018 };

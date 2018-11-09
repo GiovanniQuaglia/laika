@@ -15,13 +15,13 @@ const displayHiddenCanvas = () => {
 
 function displayInstructions() {
   instructions.style.visibility = 'visible';
-  setTimeout(fadeout, 40);
+  setTimeout(fadeout, 4000);
   setTimeout(
     () => {
       instructions.remove();
       displayHiddenCanvas();
       runGame();
-    }, 50,
+    }, 5000,
   );
 }
 
